@@ -19,7 +19,6 @@ namespace file_handling
             w.Write(color);
             w.Write(price);
             w.Write(in_stock);
-            w.Write('\n');
             w.Close();
 
             Console.WriteLine("Your entry has been saved!");

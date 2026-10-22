@@ -14,7 +14,7 @@ namespace file_handling
         {
             var writer = new StreamWriter(file_path, append: true);
             writer.WriteLine(product_details);
-            
+            writer.Close();
             Console.WriteLine("Your entry has been saved!");
         }
 
