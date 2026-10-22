@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
@@ -48,9 +49,15 @@ namespace file_handling
 
         private static void file_reading()
         {
+            if (!File.Exists(file_path))
+            {
+                Console.WriteLine($"No products saved yet. Expected file: {file_path}\n");
+                return;
+            }
+
             foreach (string deserialized_version in File.ReadAllLines(file_path))
             {
-                var serialized_version = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(deserialized_version)!;
+                var serialized_version = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(deserialized_version);
                 Console.WriteLine($"Name: {serialized_version["name"]}\nColor: {serialized_version["color"]}\nPrice: {serialized_version["price"]}\nOut of stock: {serialized_version["outOfStock"]}\n");
             }
         }

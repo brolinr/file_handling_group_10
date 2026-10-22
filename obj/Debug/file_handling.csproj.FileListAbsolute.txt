@@ -1,7 +1,0 @@
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\obj\Debug\file_handling.csproj.AssemblyReference.cache
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\obj\Debug\file_handling.csproj.CoreCompileInputs.cache
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\bin\Debug\file_handling.exe.config
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\bin\Debug\file_handling.exe
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\bin\Debug\file_handling.pdb
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\obj\Debug\file_handling.exe
-C:\Users\Brolinr\Documents\Visual Studio 2019\OOP\file_handling\obj\Debug\file_handling.pdb

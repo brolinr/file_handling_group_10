@@ -36,6 +36,12 @@ namespace file_handling
 
         private static void file_reading()
         {
+            if (!File.Exists(file_path))
+            {
+                Console.WriteLine($"No products saved yet. Expected file: {file_path}\n");
+                return;
+            }
+
             // string text = File.ReadAllText(file_path); // METHOD 1: Loading all text as one giant string
             // Console.WriteLine(text);
 

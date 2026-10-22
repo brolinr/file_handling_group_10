@@ -39,13 +39,21 @@ namespace file_handling
 
         private static void file_reading()
         {
-            var reader = new StreamReader(file_path);
-            string? line;
-
-            // So long as the line being printed is not null and has a value we print it
-            while ((line = reader.ReadLine()) != null)
+            if (!File.Exists(file_path))
             {
-                Console.WriteLine(line);
+                Console.WriteLine($"No products saved yet. Expected file: {file_path}\n");
+                return;
+            }
+
+            using (var reader = new StreamReader(file_path))
+            {
+                string line;
+
+                // So long as the line being printed is not null and has a value we print it
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
             }
         }
 

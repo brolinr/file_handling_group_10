@@ -46,17 +46,24 @@ namespace file_handling
         // Reading file results
         private static void file_reading()
         {
-            var binary_reader = new BinaryReader(File.OpenRead(file_path));
-
-            while (binary_reader.BaseStream.Position < binary_reader.BaseStream.Length)
+            if (!File.Exists(file_path))
             {
-                string product_name = binary_reader.ReadString();
-                string product_color = binary_reader.ReadString();
+                Console.WriteLine($"No products saved yet. Expected file: {file_path}\n");
+                return;
+            }
 
-                double product_price = binary_reader.ReadDouble();
-                bool product_stock = binary_reader.ReadBoolean();
+            using (var binary_reader = new BinaryReader(File.OpenRead(file_path)))
+            {
+                while (binary_reader.BaseStream.Position < binary_reader.BaseStream.Length)
+                {
+                    string product_name = binary_reader.ReadString();
+                    string product_color = binary_reader.ReadString();
 
-                Console.WriteLine($"Name: {product_name}\nColor: {product_color}\nPrice: {product_price}\nOut of stock: {product_stock}\n");
+                    double product_price = binary_reader.ReadDouble();
+                    bool product_stock = binary_reader.ReadBoolean();
+
+                    Console.WriteLine($"Name: {product_name}\nColor: {product_color}\nPrice: {product_price}\nOut of stock: {product_stock}\n");
+                }
             }
         }
 
